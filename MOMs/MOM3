@@ -1,0 +1,56 @@
+*Meeting Minutes*
+
+*Date:* 14 Dec 2023
+*Time:* 19:00
+*Location:* Online Meeting
+
+*Attendees:*
+- Abdelrahman elkady
+-Abdelrahman ameen
+-Arwa ibrahim
+-Lama zoroub
+
+*Agenda:*
+- Introduction of new sprints and assignment of tasks for the upcoming phases
+
+*Minutes:*
+
+1. *Introduction:*
+   - The meeting was called to order at 19:00 with With all of us attending.
+
+2. *Introduction of New Sprints:*
+   - New sprints were introduced to ensure that we are following the agile devolopment style.
+
+3. *Sprint Details:*
+   - *Sprint 1 - Creating a suitable database:*
+      - Ameen and elkady was assigned the task of creating the database.and transferring the schema into actual sql code.
+   - *Sprint 2 - Filling Database With actual data:*
+      - ameen was assigned the responsibility of populating the database tables with relevant data. this is important for testing the data
+   - *Sprint 3 - Frontend coding:*
+      - Arwa and lama is responsible for choosing an online template for the frontend. following design and layout principals
+
+   - *Sprint 4 - integrating the frontend with the back end:*
+      - Ameen and elkady was assigned the task of integrating the chosen template into Razor Pages. This involves ensuring a seamless user interface and proper functionality.
+
+4. *Timeline and Deadlines:*
+   - We became stricter with the deadlines around this time
+
+5. *Communication and Collaboration:*
+   - -We stressed on how important communication was and is to the completion of the project
+7. *Next Steps:*
+   -We decided to work in parallel to save time
+   - Team members were encouraged to commence work on their assigned sprints promptly and provide regular updates on progress.
+
+8. *Closure:*
+   - The meeting was done at 21:30,Thanking each other for our work
+*Action Items:*
+- elkady and ameen: Database creation (Sprint 3)
+- ameen: Filling database tables (Sprint 3)
+- Arwa: Frontend template selection and filtering (Sprint 3)
+- lama: Template integration to Razor Pages (Sprint 3)
+-
+
+*Next Meeting:*
+- Date: 17 December 2023
+- Time: 19:00
+- Location: Online Meeting
