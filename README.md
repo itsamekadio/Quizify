@@ -1,4 +1,3 @@
-# Quizify
 # Quiz Website
 
 This repository contains the source code for a Quiz Website developed using SQL for database management and Razor Pages for the frontend.
@@ -29,7 +28,7 @@ The Quiz Website is designed to provide a platform for users to create, particip
 ## Setup Instructions
 
 1. **Database Setup:**
-   - Execute the SQL scripts in the `database_scripts` folder to set up the database schema.
+   - Execute the SQL scripts in the `database_scripts/` folder to set up the database schema.
    - Configure the connection string in `appsettings.json` with your database credentials.
 
 2. **Backend Setup:**
@@ -47,6 +46,31 @@ The Quiz Website is designed to provide a platform for users to create, particip
 - `src/`: Source code for the backend.
 - `wwwroot/`: Static files for the frontend.
 
+## Diagrams
+
+- **Entity-Relationship Diagram (ERD):**
+![ERD](https://github.com/itsamekadio/Quizify/assets/135104188/2e6f17ad-1d7f-451d-816a-139ff95c1e8f)
+
+- **Concept Diagrams:**
+ ![Screenshot 2023-12-16 183803](https://github.com/itsamekadio/Quizify/assets/135104188/75f8e756-e571-466c-8d4a-8a614a0810c5)
+
+- **Use Case Diagrams:**
+- ![use case](https://github.com/itsamekadio/Quizify/assets/135104188/f00ac136-0bd0-44df-a134-a319b37f22ba)
+
+
+
+  - - **Context Diagram:**
+ ![context](https://github.com/itsamekadio/Quizify/assets/135104188/ef58028a-22db-43a1-8432-28cfb00a580b)
+
+- - **The schema:**
+![Final Schema 2](https://github.com/itsamekadio/Quizify/assets/135104188/e3e7d15d-060e-48b4-b30c-a78939410c7f)
+
+
+
+- **Class Diagrams:**
+  
+![unnamed](https://github.com/itsamekadio/Quizify/assets/135104188/f9cc0dd8-9065-48b2-91c8-739d5d93bf08)
+
 ## Contribution Guidelines
 
 If you'd like to contribute to the project, please follow the guidelines outlined in [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -61,4 +85,3 @@ This project is licensed under the [MIT License](LICENSE).
 - [Razor Pages](https://docs.microsoft.com/en-us/aspnet/core/razor-pages/)
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/)
 - [Bootstrap](https://getbootstrap.com/)
-
