@@ -1,0 +1,46 @@
+Meeting Minutes
+
+Date: 7 Dec 2023
+
+Time: 19:00
+
+Location: Online Meeting
+
+Attendees:
+- Nour Awad
+- Ahmed Taha
+- Karim Ashraf
+- Faris Sharara
+
+Agenda:
+- Progress update on design pattern implementation
+- CI/CD pipeline status check
+- SQL issue resolution follow-up
+- Discussion on any challenges
+
+Minutes:
+
+1. Design Pattern Implementation:
+   - Team members provided updates on the implementation of discussed design patterns, sharing insights and challenges faced during the process.
+
+2. Writing a doccuments check:
+   - The two Abdelrahmans provided a discussed the possible functional and which is functional and non functional
+
+3. coming up with a class diagran:
+   - Elkady addressed the possible relationships for the entities to  the team.
+4. Next Steps:
+   - The team outlined the next steps for incorporating the discussed design patterns into the project. 
+   - Basmala and lama decied on making the concept and use case diagrams.
+
+5. Closure:
+   - The meeting was adjourned at 20:30, with a reminder to stay proactive in addressing challenges and maintaining effective communication.
+
+Action Items:
+- All team members: Continue with the implementation of design patterns and address any challenges encountered.
+- Ameen:ensure that the srs is well doccumented.
+- Elkady: monitor the diagrams.
+
+Next Meeting:
+- Date: friday 15 December 2023
+- Time: 20:00
+- Location: Online Meeting
