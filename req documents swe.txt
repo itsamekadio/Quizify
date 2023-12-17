@@ -1,0 +1,71 @@
+
+Functional Requirements:
+
+a)-User Registration and Authentication:
+
+1-Users should be able to create accounts.
+2-The system must authenticate users during login.
+b)Quiz Creation and Management:
+
+3-Admins should be able to create quizzes with various question types (multiple choice, true/false, etc.).
+4-Questions should support multimedia elements (images, videos).
+5-Quizzes must have a time limit.
+c)User Profile Management:
+
+6-Users should be able to update their profiles.
+7-User profiles should display quiz history and achievements.
+d)Quiz Taking:
+
+8-Users should be able to select and take available quizzes.
+9-The system should provide immediate feedback on answers.
+10-low users to save and resume quizzes.
+Se0core Tracking:
+
+11_The system must calculate and display scores upon quiz completion.
+12_Score history and performance analytics should be available to users.
+f)Leaderboard:
+
+13_A global or category-specific leaderboard should showcase top performers.
+14_Leaderboard should update in real-time.
+
+g)Admin Panel:
+
+15_An admin panel to manage users, quizzes, and monitor site activity.
+16_Ability to deactivate or remove inappropriate content or users.
+
+
+h)Security:
+
+17-Secure storage of user data, including passwords.
+18-Protection against common web vulnerabilities (SQL injection, XSS).
+i)Search Functionality:
+
+19-Users should be able to search for quizzes based on different criteria (topic, difficulty).
+20-A search bar for easy navigation.
+
+j)Responsive Design:
+
+21-The website must be accessible and usable on various devices (desktops, tablets, mobile phones).
+
+
+k)Gamification Elements:
+
+22-Badges, achievements, or virtual rewards for completing quizzes.
+
+l)Randomization of Questions:
+
+23-Questions and answer options should be randomized to prevent cheating.
+m)Data Backup and Recovery:
+
+24-Regularly back up user data and quiz content.
+25-A system for data recovery in case of system failure.
+secondly:Non-functional Requirements:
+
+A)Performance:
+
+1-The website should load within a reasonable time frame.
+2-Handle concurrent user sessions efficiently.
+B)Scalability:
+
+3-The system should be scalable to accommodate a growing user base.
+4-Able to handle a significant increase in quiz submissions and user registrations
