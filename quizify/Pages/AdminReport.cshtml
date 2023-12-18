@@ -1,0 +1,47 @@
+﻿@page
+@model Quizzify.Pages.AdminReportModel
+@{
+}
+
+
+<body>
+    <br />
+    <div class="admin-reports-page">
+        <div class="reports-header">
+            <h2>Admin Reports</h2>
+        </div>
+
+        <div class="reports-table">
+            <table>
+                <tr>
+                    <th>Report Content</th>
+                    <th>Date Made</th>
+                    <th>Report Maker Name</th>
+                    <th>Resolution</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Report 1 content...</td>
+                    <td>2023-01-15</td>
+                    <td>John Doe</td>
+                    <td>
+                        <textarea placeholder="Enter resolution..."></textarea>
+                    </td>
+                    <td><button asp-route-id="1"> Resolved </button></td>
+                    
+                </tr>
+                <tr>
+                    <td>Report 2 content...</td>
+                    <td>2023-02-02</td>
+                    <td>Jane Smith</td>
+                    <td>
+                        <textarea placeholder="Enter resolution..."></textarea>
+                    </td>
+                    <td><button asp-route-id="1"> Resolved </button></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </div>
+    </div>
+
+</body>
