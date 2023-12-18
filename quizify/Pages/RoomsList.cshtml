@@ -1,0 +1,37 @@
+﻿@page
+@model Quizzify.Pages.RoomsModel
+@{
+}
+<body>
+
+    <h2>Rooms</h2>
+    <form method="post">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Admin</th>
+                <th>Description</th>
+                <th>Capacity</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Room 1</td>
+                <td>Admin 1</td>
+                <td>Description 1</td>
+                <td>10</td>
+                <td><button asp-route-id="2"> Enter </button><br></br><button asp-route-id="1"> Report </button></td>
+            </tr>
+            <tr>
+                <td>Room 2</td>
+                <td>Admin 2</td>
+                <td>Description 2</td>
+                <td>15</td>
+                <td><button asp-route-id="2"> Enter </button><br></br><button asp-route-id="1"> Report </button></td>
+
+            </tr>
+
+        </table>
+    </form>
+</body>
+
+
