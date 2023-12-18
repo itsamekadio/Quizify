@@ -1,0 +1,44 @@
+﻿@page
+@model Quizzify.Pages.AdminRoomUsersModel
+@{
+}
+
+    <form method="post">
+
+    <body>
+        <br />
+
+        <div class="admin-users-page">
+            <div class="admin-users-header">
+                <h2>Room Users</h2>
+            </div>
+
+            <div class="users-table">
+                <table>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        <th>Remove</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>JohnDoe</td>
+                        <td> <button asp-route-id="2" class="remove-button">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>JaneSmith</td>
+                        <td> <button asp-route-id="2" class="remove-button">Remove</button></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </table>
+            </div>
+        </div>
+
+
+
+    </body>
+    
+    </form>
+
+
