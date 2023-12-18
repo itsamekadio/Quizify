@@ -1,0 +1,25 @@
+﻿@page
+@model Quizzify.Pages.AdminQuizzesListModel
+@{
+}
+<body>
+    <form method="post">
+        <div>
+            <div>
+                <h3>Quiz title</h3> @* change it to variable *@
+            </div>
+            <div>
+                <p>discrption:</p> @* change it to variable *@
+
+            </div>
+            <div>
+                <p>author:</p> @* change it to variable *@
+
+            </div>
+            <button asp-route-id="1">Edit</button>
+            <button asp-route-id="2">Remove</button>
+            <button asp-route-id="3">Enter</button>
+
+        </div>
+    </form>
+</body>

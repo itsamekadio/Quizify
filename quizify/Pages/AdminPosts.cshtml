@@ -1,0 +1,39 @@
+﻿@page
+@model Quizzify.Pages.AdminPostsModel
+@{
+}
+<body>
+    <form method="post">
+        <div>
+            <label>type:</label>
+            <select>
+                <option>Post</option>
+                <option>Announcement</option>
+            </select>
+            <br>
+            <label><b>What is in your mind?</b></label><br>
+            <input type="text"><br>
+            <button asp-route-id="1"> Submit </button>
+        </div>
+
+        <div>
+            <div>
+                <a>user name</a> @* change it to variable *@
+                <button asp-route-id="2"> Edit </button>
+                <button asp-route-id="3"> Remove </button>
+            </div>
+
+            <div>
+                <p>bla bla bla bla</p> @* change it to variable *@
+
+            </div>
+            <div>
+                <a href="https://localhost:7272/AdminComments">comment</a>
+            </div>
+
+            <input type="text"><br><br>
+            <button asp-route-id="4">submit</button>
+
+        </div>
+    </form>
+</body>
