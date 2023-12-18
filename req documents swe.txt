@@ -1,0 +1,57 @@
+
+Functional Requirements:
+
+a)-User friendly UI :
+1)Pages for each feature in the website must be implemented
+2)the ui should be different depending on what type of user has logged in
+3)The navigation betweem pages must be easy
+b)An SQL database is implemented for the wbesite to acces:
+4-The queries to create the database is implemented
+5-The database should be easily accesible for the front end
+c)-User Registration and Authentication:
+
+6-Users should be able to create accounts.
+7-The system must authenticate users during login.
+8-the system must diffrentiate between the different type of users
+c)Quiz Creation and Management:
+
+9-Admins should be able to create quizzes 
+s)User Profile Management:
+
+10-Users should be able to update their profiles.
+11-User profiles should display quiz history and achievements.
+e)Quiz Taking:
+12-Users should be able to select and take available quizzes.
+13-Users can retake quizes.
+14-The system should provide immediate feedback on answers.
+Score Tracking:
+
+15_The system must calculate and display scores upon quiz completion.
+
+
+g)Admin Panel:
+
+16_An admin panel to manage users, quizzes, and monitor site activity.
+
+h)Search Functionality:
+
+
+17-A search bar for easy navigation.
+
+i)Responsive Design:
+
+18-The website must be accessible and usable on various devices (desktops, tablets, mobile phones).
+j)Data Backup and Recovery:
+
+19-Regularly back up user data and quiz content.
+20-A system for data recovery in case of system failure.
+secondly:Non-functional Requirements:
+
+A)Performance:
+
+1-The website should load within a reasonable time frame.
+2-Handle concurrent user sessions efficiently.
+B)Scalability:
+
+3-The system should be scalable to accommodate a growing user base.
+4-Able to handle a significant increase in quiz submissions and user registrations
