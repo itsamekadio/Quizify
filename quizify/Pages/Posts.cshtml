@@ -1,0 +1,57 @@
+﻿@page
+@model Quizzify.Pages.PostsModel
+@{
+}
+
+    <form method="post">
+
+
+    <body>
+        <br />
+        <div class="stream-page">
+            <div class="stream-header">
+                <h2>Stream</h2>
+            </div>
+
+            <!-- Sample Post 1 -->
+            <div class="post">
+                <span class="user-name">Arwa Matar</span>
+                <button asp-route-id="2" class="report-button"> report </button>
+                <p class="post-content">Kaaaaaaaaaaaaaaaaaaaaak</p>
+                <textarea class="comment-textbox" placeholder="Add a comment..."></textarea>
+                <button class="comment-button">Comment</button>
+                <a href="https://localhost:7272/Comments" class="view-comments-button">View Comments</a>
+            </div>
+
+            <!-- Sample Post 2 -->
+            <div class="post">
+                <span class="user-name">Abdelrahman Ameen</span>
+                <button asp-route-id="2" class="report-button"> report </button>
+                <p class="post-content">Kefaya seyaaa7!!!</p>
+                <textarea class="comment-textbox" placeholder="Add a comment..."></textarea>
+                <button class="comment-button">Comment</button>
+                <a href="https://localhost:7272/Comments" class="view-comments-button">View Comments</a>
+            </div>
+
+            <!-- New Post Text Box -->
+            <div class="new-post">
+                <textarea placeholder="What's on your mind..."></textarea>
+                <button class="post-button">Post</button>
+            </div>
+        </div>
+
+    </body>
+       
+               
+        
+
+    
+
+
+</form>
+
+
+
+
+
+
