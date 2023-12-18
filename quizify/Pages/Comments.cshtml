@@ -1,0 +1,52 @@
+﻿@page
+@model CommentsModel
+@{
+}
+
+
+<form method="post">
+
+    <body>
+
+        <div class="post-comments-page">
+            <div class="post-content">
+                <h2>Post Title</h2>
+                <p> Kaaaaak</p>
+            </div>
+
+            <!-- Sample Comment 1 -->
+            <div class="comment">
+                <span class="user-name">John Doe</span>
+
+                <button asp-route-id="1" class="report-button"> report </button>
+
+                <p class="comment-content">Great post!</p>
+            </div>
+
+            <!-- Sample Comment 2 -->
+            <div class="comment">
+                <span class="user-name">Jane Smith</span>
+
+                <button asp-route-id="1" class="report-button"> report </button>
+
+                <p class="comment-content">I agree, very informative!</p>
+            </div>
+
+            <!-- Add more comments as needed -->
+            <!-- Add Comment Text Box -->
+            <div class="add-comment">
+                <textarea placeholder="Add a comment..."></textarea>
+                <button asp-route-id="2" class="comment-button"> submit </button>
+            </div>
+        </div>
+
+    </body>
+
+
+        
+ 
+
+    </form>
+
+
+
