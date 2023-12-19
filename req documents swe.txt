@@ -10,9 +10,9 @@ b)An SQL database is implemented for the wbesite to acces:
 5-The database should be easily accesible for the front end
 c)-User Registration and Authentication:
 
-6-Users should be able to create accounts.
-7-The system must authenticate users during login.
-8-the system must diffrentiate between the different type of users
+6-At leaset 2 types of Users should be able to create accounts.
+7-The system must authenticate at least 2 types of users during login.
+8-the system must diffrentiate between the different at least 2 types of users type of users
 9-with each sign up the database is updated accordingly
 c)Quiz Creation and Management:
 
