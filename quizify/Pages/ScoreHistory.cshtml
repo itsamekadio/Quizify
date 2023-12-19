@@ -3,8 +3,48 @@
 @{
 }
 
-<body>
+@* <body>
     <br />
+    <header>
+        <h1>Quiz Score History Page</h1>
+    </header>
+
+
+    <main>
+        <section class="quiz-history-section">
+            <h2>Quiz Score History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quiz Title</th>
+                        <th>Score</th>
+                        <th>Date Taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample Quiz Score History Data -->
+                    <tr>
+                        <td>Math Quiz</td>
+                        <td>80</td>
+                        <td>2023-01-01 12:00:00</td>
+                    </tr>
+                    <!-- Add more rows for other quiz scores -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="chart-section">
+            <h2>Player Performance Chart</h2>
+            <div class="chart">
+                <div class="bar" style="--bar-height: 80%;"></div>
+                <div class="bar" style="--bar-height: 90%;"></div>
+                <div class="bar" style="--bar-height: 75%;"></div>
+            </div>
+        </section>
+    </main>
+
+
+    <br>
 
     <div class="quiz-history">
         <div class="history-header">
@@ -36,5 +76,131 @@
         </div>
     </div>
 
-</body>
+</body> *@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #36393f;
+            color: #fff;
+        }
+
+        header {
+            background-color: #202225;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .quiz-history-section, .chart-section {
+            background-color: #40444b;
+            border: 1px solid #2f3136;
+            border-radius: 15px;
+            padding: 20px;
+            width: 45%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #2f3136;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #36393f;
+        }
+
+        .chart {
+            height: 300px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #2f3136;
+        }
+
+        .bar {
+            width: 30px;
+            background-color: #7289da;
+            position: absolute;
+            bottom: 0;
+            transition: height 0.5s ease;
+        }
+
+            .bar:nth-child(2) {
+                left: 50px;
+            }
+
+            .bar:nth-child(3) {
+                left: 100px;
+            }
+
+        footer {
+            background-color: #202225;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+    <title>Quiz Score History Page</title>
+</head>
+<body>
+
+    <header>
+        <h1>Quiz Score History Page</h1>
+    </header>
+
+    <main>
+        <section class="quiz-history-section">
+            <h2>Quiz Score History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quiz Title</th>
+                        <th>Score</th>
+                        <th>Date Taken</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample Quiz Score History Data -->
+                    <tr>
+                        <td>Math Quiz</td>
+                        <td>80</td>
+                        <td>2023-01-01 12:00:00</td>
+                    </tr>
+                    <!-- Add more rows for other quiz scores -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="chart-section">
+            <h2>Player Performance Chart</h2>
+            <div class="chart">
+                <div class="bar" style="height: 80%;"></div>
+                <div class="bar" style="height: 90%;"></div>
+                <div class="bar" style="height: 75%;"></div>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+</html>
