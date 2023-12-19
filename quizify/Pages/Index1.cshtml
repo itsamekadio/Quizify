@@ -1,0 +1,29 @@
+﻿@page
+@model Quizzify.Pages.Index1Model
+@{
+}
+<head>
+    <title>Sign Up Form</title>
+    <style>
+        .admin-info,
+        .author-info {
+            display: none; /* Hide the additional fields by default */
+        }
+    </style>
+</head>
+
+<div style="text-align: center; margin-bottom: 20px;">
+    <p style="font-size: 18px; font-weight: bold;">What type of user are you?</p>
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <form asp-page-handler="player" method="post">
+        <button type="submit" style="margin-right: 10px;">PLAYER</button>
+    </form>
+    <form asp-page-handler="author" method="post">
+        <button type="submit" style="margin-right: 10px;">AUTHOR</button>
+    </form>
+    <form asp-page-handler="admin" method="post">
+        <button type="submit">ADMIN</button>
+    </form>
+</div>

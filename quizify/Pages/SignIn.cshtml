@@ -14,10 +14,10 @@
 
             <br><br>
             <label><b>Email</b></label><br>
-            <input type="text"><br><br><br>
+            <input type="email" asp-for="@Model.email" /> <br />
 
             <label><b>Password</b></label><br>
-            <input type="text"><br><br>
+            <input type="text" asp-for="@Model.pass" /> <br />
 
             <label>
                 <input type="checkbox"> Remember me
@@ -27,7 +27,7 @@
             <button type="button">Cancel</button><br><br><br>
             
 
-            <span> <a href="https://localhost:7272/SignUp">Create an account</a></span>
+            <span> <a href="https://localhost:7272/Index1">Create an account</a></span>
         </div>
 
     </form>
