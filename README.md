@@ -58,7 +58,7 @@ The Quiz Website is designed to provide a platform for users to create, particip
 
 - **Use Case Diagrams:**
 - ![use case](https://github.com/itsamekadio/Quizify/assets/135104188/f00ac136-0bd0-44df-a134-a319b37f22ba)
-
+![UseCase Quizify  (2)](https://github.com/itsamekadio/Quizify/assets/148448444/47e58360-7e8c-43d3-96e0-adba1a7d2254)
 
 
   - - **Context Diagram:**
@@ -74,7 +74,7 @@ The Quiz Website is designed to provide a platform for users to create, particip
 ![unnamed](https://github.com/itsamekadio/Quizify/assets/135104188/f9cc0dd8-9065-48b2-91c8-739d5d93bf08)
 
 -  **Sequence:**
-![Sequence diagram (5)](https://github.com/itsamekadio/Quizify/assets/148448444/e521ea49-46c8-421e-825e-e37cfc7ae6e7)![UseCase Quizify  (2)](https://github.com/itsamekadio/Quizify/assets/148448444/47e58360-7e8c-43d3-96e0-adba1a7d2254)
+![Sequence diagram (5)](https://github.com/itsamekadio/Quizify/assets/148448444/e521ea49-46c8-421e-825e-e37cfc7ae6e7)
 
 
 ## Contribution Guidelines
