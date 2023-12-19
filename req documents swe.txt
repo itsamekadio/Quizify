@@ -13,20 +13,21 @@ c)-User Registration and Authentication:
 6-Users should be able to create accounts.
 7-The system must authenticate users during login.
 8-the system must diffrentiate between the different type of users
+9-with each sign up the database is updated accordingly
 c)Quiz Creation and Management:
 
-9-Admins should be able to create quizzes 
+10-Admins should be able to create quizzes 
 s)User Profile Management:
 
-10-Users should be able to update their profiles.
-11-User profiles should display quiz history and achievements.
+11-Users should be able to update their profiles.
+12-User profiles should display quiz history and achievements.
 e)Quiz Taking:
-12-Users should be able to select and take available quizzes.
-13-Users can retake quizes.
-14-The system should provide immediate feedback on answers.
+13-Users should be able to select and take available quizzes.
+14-Users can retake quizes.
+15-The system should provide immediate feedback on answers.
 Score Tracking:
 
-15_The system must calculate and display scores upon quiz completion.
+16_The system must calculate and display scores upon quiz completion.
 
 
 g)Admin Panel:
