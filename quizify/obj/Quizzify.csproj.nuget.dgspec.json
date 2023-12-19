@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Quizzify\\Quizzify\\Quizzify.csproj": {}
+    "D:\\CSAI2022-203\\Quizify\\quizify\\Quizzify.csproj": {}
   },
   "projects": {
-    "D:\\Quizzify\\Quizzify\\Quizzify.csproj": {
+    "D:\\CSAI2022-203\\Quizify\\quizify\\Quizzify.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Quizzify\\Quizzify\\Quizzify.csproj",
+        "projectUniqueName": "D:\\CSAI2022-203\\Quizify\\quizify\\Quizzify.csproj",
         "projectName": "Quizzify",
-        "projectPath": "D:\\Quizzify\\Quizzify\\Quizzify.csproj",
+        "projectPath": "D:\\CSAI2022-203\\Quizify\\quizify\\Quizzify.csproj",
         "packagesPath": "C:\\Users\\actac\\.nuget\\packages\\",
-        "outputPath": "D:\\Quizzify\\Quizzify\\obj\\",
+        "outputPath": "D:\\CSAI2022-203\\Quizify\\quizify\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

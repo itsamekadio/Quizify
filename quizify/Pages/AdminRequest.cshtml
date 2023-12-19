@@ -2,25 +2,78 @@
 @model Quizzify.Pages.AdminRequestModel
 @{
 }
-<body>
+
     <form method="post">
+    <body>
 
-        <div>
-            <div>
-                <a>Author Name</a> @* change it to variable *@
-            </div>
+        <header>
+            <h1>Requests Page</h1>
+        </header>
 
-            <div>
-                <a>Quiz title</a> @* change it to variable *@
-            </div>
+        <main>
+            <section class="requests-section">
+                <h2>Room Join Requests</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>User Name</th>
+                            <th>Room Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Room Join Request -->
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>Room A</td>
+                            <td>
+                                <button asp-route-id="1" class="approve-btn">Approve</button>
+                                <button asp-route-id="2" class="remove-btn">Remove</button>
+                            </td>
+                        </tr>
+                        <!-- Add more rows for other requests -->
+                    </tbody>
+                </table>
+            </section>
 
-            <div>
-                <p>Quiz info</p> @* change it to variable *@
+            <section class="requests-section">
+                <h2>Quiz Add Requests</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>User Name</th>
+                            <th>Quiz Title</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample Quiz Add Request -->
+                        <tr>
+                            <td>2</td>
+                            <td>Jane Doe</td>
+                            <td>Math Quiz</td>
+                            <td>
+                                <button asp-route-id="1" class="approve-btn">Approve</button>
+                                <button asp-route-id="2" class="remove-btn">Remove</button>
+                            </td>
+                        </tr>
+                        <!-- Add more rows for other requests -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
 
-            </div>
-            <button asp-route-id="1"> Add </button>
-            <button asp-route-id="2"> Remove </button>
+        <footer>
+            <p>&copy; 2023 Quzzify</p>
+        </footer>
 
-        </div>
+    </body>
     </form>
-</body>
+
+
+
+
+

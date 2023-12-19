@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KMXKu5IjKfybbtjUCxp/dsXlNRfy4awMpX1BkXSjpoFnJX130LW0FwY6XogxSjQUGaw31PNqoVtPvIwk2tiRRA==",
+  "dgSpecHash": "ESWWoE+pF+9WJ0g1jSJHzPudw0GjHrEm/jp/wxBcXVWPmfDgy2a2EjEP2JQXS181I8FUeNTovV+FM/ZW9GYB1Q==",
   "success": true,
-  "projectFilePath": "D:\\Quizzify\\Quizzify\\Quizzify.csproj",
+  "projectFilePath": "D:\\CSAI2022-203\\Quizify\\quizify\\Quizzify.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
