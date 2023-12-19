@@ -1,5 +1,3 @@
-
-  #سس
 # Quiz Website
 
 This repository contains the source code for a Quiz Website developed using SQL for database management and Razor Pages for the frontend.
@@ -75,6 +73,9 @@ The Quiz Website is designed to provide a platform for users to create, particip
 
 -  **Sequence:**
 ![Sequence diagram (5)](https://github.com/itsamekadio/Quizify/assets/148448444/e521ea49-46c8-421e-825e-e37cfc7ae6e7)
+
+- **crc:**
+![Flowcharts](https://github.com/itsamekadio/Quizify/assets/148448444/c79ede38-2a4b-4e7b-b61a-354e4dcd9b38)
 
 
 ## Contribution Guidelines
