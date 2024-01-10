@@ -1,25 +1,30 @@
 ﻿@page
 @model Quizzify.Pages.HomePageModel
-@{
-}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+</head>
+<body>
+
+    <div class="container">
+        <div class="quote-container">
+            <i class="fas fa-lightbulb quote-icon"></i>
+            <p class="quote-text">"Success is not final, failure is not fatal: It is the courage to continue that counts."</p>
+        </div>
+        </div>
+</body>
 
 
+<div style="display: flex; justify-content: center; align-items: center;">
+    <form asp-page-handler="Rooms" method="post">
+        <button type="submit" style="margin-right: 10px;">ROOMS</button>
+    </form>
+    <form asp-page-handler="Profile" method="post">
+        <button type="submit" style="margin-right: 10px;">PROFILE</button>
+    </form>
 
-<aside class="side-menu">
-    
-            <ul>
-
-                <li>
-                    <a href="https://localhost:7272/Search" class="w3-button w3-bar-item">Search</a>
-                </li>
-                <li>
-                    <a href="https://localhost:7272/RoomsList" class="w3-button w3-bar-item">Rooms</a>
-                </li>
-                <li>
-                    <a href="https://localhost:7272/Profile" class="w3-button w3-bar-item">Profile</a>
-            </ul>
-     
-    
-</aside>
-
-
+</div>
+</html>

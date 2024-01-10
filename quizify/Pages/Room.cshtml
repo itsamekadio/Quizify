@@ -1,23 +1,60 @@
 ﻿@page
 @model Quizzify.Pages.RoomModel
-@{
+@using System.Data
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+@if (Model.quizes != null && Model.quizes.Rows.Count > 0)
+{
+    <div class="friendship-table">
+        <h3>Quizzes</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DataRow row in Model.quizes.Rows)
+                {
+                    <tr>
+                        
+                        <td>@row["Title"]</td>
+                        <td>@row["Quiz_Descreption"]</td>
+                      
+                        <td>
+                            <form asp-page-handler="Joinquiz" method="post">
+                                <input type="hidden" name="RoomId" value="@row["Quiz_ID"]" />
+                                <button type="submit" name="Action" value="Joinquiz_@row["Quiz_ID"]">Join</button>
+                            </form>
+
+
+
+
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
-<aside class="side-menu">
+else
+{
+    <p>No quizes data available.</p>
+}
 
-    <ul>
+<form asp-page-handler="Joinstream" method="post">
+    
+    <button type="submit" >Stream</button>
+</form>
 
-        <li>
-            <a href="https://localhost:7272/Posts" class="w3-button w3-bar-item">Stream</a>
-        </li>
-        <li>
-            <a href="https://localhost:7272/QuizzesList" class="w3-button w3-bar-item">Quizzes</a>
-        </li>
-
-        <li>
-       <a href="https://localhost:7272/Leaderboard" class="w3-button w3-bar-item">Leaderboard</a>
-        
-            
-    </ul>
-
-
-</aside>
+</html>

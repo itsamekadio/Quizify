@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Quizzify.Pages.classes;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 namespace Quizzify.Pages
@@ -32,7 +33,7 @@ namespace Quizzify.Pages
 
 
         static string ConString = @"Data Source=ABDELRAHMAN-ELK;Initial Catalog=yarab1;Integrated Security=True";
-        SqlConnection con = new SqlConnection(ConString);
+        Admin currentadmin = new Admin();
 
         /* string query2 = "INSERT INTO AdminData (Admin_ID, Authentication_code) VALUES(202201023,10000)";*/
         public void OnGet()
@@ -40,45 +41,28 @@ namespace Quizzify.Pages
         }
         public IActionResult OnPost()
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    con.Open();
-                    string querystring = "Select  count(*) from Authenticationcodes where code='" + authcode + "'";
-                    SqlCommand cmd = new SqlCommand(querystring, con);
-                    int count = (int)cmd.ExecuteScalar();
-                    Console.WriteLine(count);
-                    if (count > 0)
-                    {
-                        string query1 = "INSERT INTO AdminData (First_Name, Last_Name,Email, AdminPassword) VALUES(" + "'" + fname + "'" + ',' + "'" + lname + "'" + "," + "'" + email + "'" + "," + "'" + password + "' )";
-                        Console.WriteLine(query1);
+                // Initialize currentPlayer inside the OnPost method
 
-                        SqlCommand cmd1 = new SqlCommand(query1, con);
-                        cmd1.ExecuteNonQuery();
-                        /* SqlCommand cmd2 = new SqlCommand(query2, con);
-                         cmd2.ExecuteNonQuery();*/
-                    }
-                    else
+
+                if (currentadmin.SignUP(ConString, fname, lname, password, email,authcode))
+                {
+                    return RedirectToPage("/AdminHomePage", new
                     {
-                        return RedirectToPage();
-                    }
+                        adminFName = currentadmin.FName,
+                        adminlName = currentadmin.LName,
+                        adminId = currentadmin.ID,
+                        adminemail = currentadmin.Email,
+                        adminpass = currentadmin.Password
+                    });
+
+
 
                 }
             }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
 
-
-            }
-
-
-            return RedirectToPage("/AdminHomePage");
+            return RedirectToPage("/SignUpAdmin");
 
         }
 

@@ -1,54 +1,69 @@
 ﻿@page
 @model Quizzify.Pages.QuizModel
-@{
-}
+@using System.Data
 
+<br />
 
-    <form method="post">
+<body>
 
-        <br />
+    @if (Model.questionstable != null && Model.questionstable.Rows.Count > 0)
+    {
+        <div class="friendship-table">
+            <h3>quizzz3s mon ami</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        
+                        <th>Answer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (DataRow row in Model.questionstable.Rows)
+                    {
+                        <tr>
+                            <td>
+                                @row["Question_ID"]- @row["Question_Content"]
+                                <br>
+                                A) @row["Option_A"]
+                                <br>
+                                B) @row["Option_B"]
+                                <br>
+                                C) @row["Option_C"]
+                                <br>
+                                D) @row["Option_D"]
+                            </td>
+                            <td>
+                                <form asp-page-handler="Joinquiz" method="post">
+                                    <input type="hidden" name="RoomId" value="@row["Quiz_ID"]" />
+                                    <label><b>Your Answer (A, B, C, D)</b></label>
+                                    <br>
+                                    <input type="text" asp-for="answer" />
+                                    <br />
+                                    <button type="button" onclick="checkans('@row["Answer"]')">Answer</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <p>No rooms data available.</p>
+    }
 
+</body>
 
-    <body>
+<script>
+    function checkans(correctAns) {
+        var ans = document.querySelector('[name="answer"]').value;
 
-        <div class="quiz-page">
-            <div class="quiz-header">
-                <h2>Quiz Title</h2>
-            </div>
-
-            <div class="quiz-content">
-                <h3 class="question-number">Question 1</h3>
-                <p class="question">What is the capital of France?</p>
-
-                <!-- Choices for the current question -->
-                <div class="choices">
-                    <label>
-                        <input type="radio" name="choice" value="a"> A. Paris
-                    </label>
-                    <label>
-                        <input type="radio" name="choice" value="b"> B. Rome
-                    </label>
-                    <label>
-                        <input type="radio" name="choice" value="c"> C. Berlin
-                    </label>
-                    <label>
-                        <input type="radio" name="choice" value="d"> D. Madrid
-                    </label>
-                </div>
-
-                <!-- Navigation buttons -->
-                <div class="navigation-buttons">
-                    <button asp-route-id="1" class="prev-button">Previous </button>
-                    <button asp-route-id="2" class="next-button"> Next </button>
-                </div>
-
-                <!-- Finish Quiz button -->
-                <button asp-route-id="3" class="finish-quiz-button"> Finish Quiz </button>
-            </div>
-
-    </body>
-
-    
-    </form>
-
-
+        if (ans.toUpperCase() === correctAns.toUpperCase()) {
+            alert("Correct!!");
+        } else {
+            alert("Incorrect :(");
+        }
+    }
+</script>

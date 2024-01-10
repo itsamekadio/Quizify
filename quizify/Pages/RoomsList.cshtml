@@ -1,37 +1,59 @@
 ﻿@page
 @model Quizzify.Pages.RoomsModel
+@using System.Data
+
 @{
 }
 <body>
 
-    <h2>Rooms</h2>
-    <form method="post">
-        <table>
-            <tr>
-                <th>Title</th>
-                <th>Admin</th>
-                <th>Description</th>
-                <th>Capacity</th>
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td>Room 1</td>
-                <td>Admin 1</td>
-                <td>Description 1</td>
-                <td>10</td>
-                <td><button asp-route-id="2"> Enter </button><br></br><button asp-route-id="1"> Report </button></td>
-            </tr>
-            <tr>
-                <td>Room 2</td>
-                <td>Admin 2</td>
-                <td>Description 2</td>
-                <td>15</td>
-                <td><button asp-route-id="2"> Enter </button><br></br><button asp-route-id="1"> Report </button></td>
+   
 
-            </tr>
+    @if (Model.roomstable != null && Model.roomstable.Rows.Count > 0)
+    {
+        <div class="friendship-table">
+            <h3>Rooms</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Admin_id</th>
+                        <th>Description</th>
+                        <th>Capacity</th>
+                        <th>Action</th>
+                  
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (DataRow row in Model.roomstable.Rows)
+                    {
+                        <tr>
+                            <td>@row["Name"]</td>
+                            <td>@row["Admin_ID"]</td>
+                            <td>@row["Description"]</td>
+                            <td>@row["Capacity"]</td>
+                           
+                            <td>
+                                <form asp-page-handler="JoinRoom" method="post">
+                                    <input type="hidden" name="RoomId" value="@row["Room_ID"]" />
+                                    <button type="submit" name="Action" value="JoinRoom_@row["Room_ID"]">Join</button>
+                                </form>
 
-        </table>
-    </form>
+
+                              
+
+                             
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <p>No rooms data available.</p>
+    }
+
 </body>
 
 

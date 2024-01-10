@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Quizzify.Pages.classes;
 using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 
@@ -14,13 +15,12 @@ namespace Quizzify.Pages
         [Required]
         public string email { set; get; }
 
-      
+
         static string ConString = @"Data Source=ABDELRAHMAN-ELK;Initial Catalog=yarab1;Integrated Security=True";
         SqlConnection con = new SqlConnection(ConString);
-
+        
         public void OnGet()
-        {
-        }
+        {        }
         public IActionResult OnPost()
 
         {
@@ -28,30 +28,59 @@ namespace Quizzify.Pages
             { con.Open();
                 string querystring = "Select  count(*) from AdminData where Email='" +email + "' and AdminPassword='"+pass+"'";
                 SqlCommand cmd1 = new SqlCommand(querystring, con);
+                
                 int countadmin = (int)cmd1.ExecuteScalar();
-                Console.WriteLine(querystring);
-                Console.WriteLine(countadmin);
+               
                 string querystring2 = "Select  count(*) from PlayerData where Email='" + email + "' and playerPassword='" + pass + "'";
                 SqlCommand cmd2 = new SqlCommand(querystring2, con);
                 int countplayer = (int)cmd2.ExecuteScalar();
-                Console.WriteLine(countplayer);
-                Console.WriteLine(querystring2);
+                /*string querystring3 = "Select  count(*) from Quiz_Author where Email='" + email + "' and playerPassword='" + pass + "'";
+                SqlCommand cmd3 = new SqlCommand(querystring3, con);
+                int countauthor = (int)cmd3.ExecuteScalar();*/
+
+                Console.WriteLine(querystring, "        ", querystring2);
+               /* Console.WriteLine(querystring3);*/
                 if (countadmin > 0)
                 {
-                   return RedirectToPage("/AdminHomePage");
+                    Admin currentadmin = new Admin();
+                   
+                   
+                    if (currentadmin.SignIn(ConString,email,pass)) {
+                        return RedirectToPage("/AdminHomePage", new
+                        {
+                            adminFName = currentadmin.FName,
+                            adminlName = currentadmin.LName,
+                            adminId = currentadmin.ID,
+                            adminemail = currentadmin.Email,
+                            adminpass = currentadmin.Password
+                        });
+
+                    }
 
 
                 }
                 else if (countplayer > 0)
                 {
-                    return RedirectToPage("/HomePage");
+                    Player currentPlayer = new Player();
+                    if (currentPlayer.SignIn(ConString,email,pass)) {
+                        return RedirectToPage("/HomePage", new
+                        {
+                            playerFName = currentPlayer.FName,
+                            playerlName = currentPlayer.LName,
+                            playerId = currentPlayer.ID,
+                            playeremail = currentPlayer.Email,
+                            playerpass = currentPlayer.Password
+                        });
+
+                    }
+
 
                 }
-                else
+               /* else if(countauthor>0)
                 {
                     return RedirectToPage("/SignIn");
 
-                }
+                }*/
 
 
 

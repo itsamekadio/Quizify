@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 using System.ComponentModel.DataAnnotations;
+using Quizzify.Pages.classes;
 
 namespace Quizzify.Pages
 {
@@ -31,56 +32,38 @@ namespace Quizzify.Pages
         [Compare(nameof(password), ErrorMessage = "should be the same as the pass")]
 
         public string passdup { set; get; }
+        Player currentPlayer = new Player();
+
 
         static string ConString = @"Data Source=ABDELRAHMAN-ELK;Initial Catalog=yarab1;Integrated Security=True";
-        SqlConnection con = new SqlConnection(ConString);
 
-        /* string query2 = "INSERT INTO AdminData (Admin_ID, Authentication_code) VALUES(202201023,10000)";*/
+
+        
         public void OnGet()
         {
-        }
+        }              
         public IActionResult OnPost()
         {
-            try
+            if (ModelState.IsValid)
             {
-                string query1 = "INSERT INTO PlayerData (First_Name, Last_Name,Email, playerPassword) VALUES(" + "'" + fname + "'" + ',' + "'" + lname + "'" + "," + "'" + email + "'" + "," + "'" + password + "' )";
-                Console.WriteLine(query1);
-                con.Open();
-                if (ModelState.IsValid)
-                {
-                    SqlCommand cmd1 = new SqlCommand(query1, con);
-                cmd1.ExecuteNonQuery();
-                    /* SqlCommand cmd2 = new SqlCommand(query2, con);
-                     cmd2.ExecuteNonQuery();*/
-                    move = true;
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.ToString());
-                return RedirectToPage("SignUpplayer");
-            }
-            finally
-            {
-                con.Close();
-                
-
+                // Initialize currentPlayer inside the OnPost method
               
+
+                if (currentPlayer.SignUP(ConString,fname,lname,password,email))
+                {
+                    return RedirectToPage("/HomePage", new { playerFName = currentPlayer.FName,
+                                                             playerlName = currentPlayer.LName,
+                                                             playerId = currentPlayer.ID,
+                                                             playeremail = currentPlayer.Email,
+                                                             playerpass = currentPlayer.Password });
+
+
+                    
+                }
             }
 
-            if (true)
-                return RedirectToPage("/HomePage");
-
-        }
-        public IActionResult OnPostMove()
-        {
-            Console.WriteLine(move);
-         if (move) return RedirectToPage("/HomePage");
-            else
-            {
-                return RedirectToPage();
-            }
+            // Handle ModelState.IsValid is false or SignUP returns false
+            return RedirectToPage();
         }
     }
 }
