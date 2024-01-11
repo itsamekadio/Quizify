@@ -10,7 +10,7 @@ namespace Quizzify.Pages
         }
     public IActionResult OnPostPlayer()
         {
-            return RedirectToPage("/SignUpplayer ");
+            return RedirectToPage("/SignUpplayer");
         }
 
         public IActionResult OnPostAdmin()
