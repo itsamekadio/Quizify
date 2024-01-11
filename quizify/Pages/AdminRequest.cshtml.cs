@@ -1,24 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Quizzify.Pages
+namespace Quizzify.Pages;
+
+public class AdminRequestModel : PageModel
 {
-    public class AdminRequestModel : PageModel
+    public void OnGet()
     {
-        public void OnGet()
+    }
+
+    public IActionResult OnPost(int id)
+    {
+        if (id == 1)
         {
+            //implement function of add button
         }
-        public IActionResult OnPost(int id)
+
+        if (id == 2)
         {
-            if (id == 1)
-            {
-                //implement function of add button
-            }
-            if (id == 2)
-            {
-                //implement function of remove button
-            }
-            return Page();
+            //implement function of remove button
         }
+
+        return Page();
     }
 }

@@ -1,44 +1,38 @@
+using System.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Quizzify.Pages.classes;
-using System.Data;
 
-namespace Quizzify.Pages
+namespace Quizzify.Pages;
+
+public class RoomsModel : PageModel
 {
+    public DataTable roomstable { get; set; }
 
-    public class RoomsModel : PageModel
+    public void OnGet()
     {
-        public DataTable roomstable { get; set; }
+        var rooms = new Room();
+        var ConString = @"Data Source=ABDELRAHMAN-ELK;Initial Catalog=yarab1;Integrated Security=True";
 
-        public void OnGet()
+        roomstable = rooms.GetRooms(ConString);
+    }
+
+    public IActionResult OnPostJoinRoom(int RoomId, string Action)
+    {
+        if (Action.StartsWith("JoinRoom_"))
         {
-            Room rooms = new Room();
-            string ConString = @"Data Source=ABDELRAHMAN-ELK;Initial Catalog=yarab1;Integrated Security=True";
-
-            roomstable = rooms.GetRooms(ConString);
-        }
-
-        public IActionResult OnPostJoinRoom(int RoomId, string Action)
-        {
-            if (Action.StartsWith("JoinRoom_"))
-            {
-                // Extract the Room ID from the Action value
-                string roomIdStr = Action.Substring("JoinRoom_".Length);
-                if (int.TryParse(roomIdStr, out int clickedRoomId))
+            // Extract the Room ID from the Action value
+            var roomIdStr = Action.Substring("JoinRoom_".Length);
+            if (int.TryParse(roomIdStr, out var clickedRoomId))
+                return RedirectToPage("/Room", new
                 {
+                    currentroomid = clickedRoomId
+                });
 
-                    return RedirectToPage("/Room", new
-                    {
-                        currentroomid = clickedRoomId
-                    });
-
-                }
-
-                // Handle other cases or errors
-                return Page();
-            }
-            else return Page();
-
+            // Handle other cases or errors
+            return Page();
         }
+
+        return Page();
     }
 }

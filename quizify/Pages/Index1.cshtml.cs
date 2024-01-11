@@ -1,27 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Quizzify.Pages
+namespace Quizzify.Pages;
+
+public class Index1Model : PageModel
 {
-    public class Index1Model : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
-        }
+    }
+
     public IActionResult OnPostPlayer()
-        {
-            return RedirectToPage("/SignUpplayer");
-        }
+    {
+        return RedirectToPage("/SignUpplayer");
+    }
 
-        public IActionResult OnPostAdmin()
-        {
-            return RedirectToPage("/SignUpAdmin");
-        }
+    public IActionResult OnPostAdmin()
+    {
+        return RedirectToPage("/SignUpAdmin");
+    }
 
-        public IActionResult OnPostAuthor()
-        {
-            return RedirectToPage("/SignUpAuthor");
-
-        }
+    public IActionResult OnPostAuthor()
+    {
+        return RedirectToPage("/SignUpAuthor");
     }
 }

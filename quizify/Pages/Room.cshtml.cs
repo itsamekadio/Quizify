@@ -1,47 +1,44 @@
+using System.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Quizzify.Pages.classes;
-using System.Data;
 
-namespace Quizzify.Pages
+namespace Quizzify.Pages;
+
+public class RoomModel : PageModel
 {
-    public class RoomModel : PageModel
+    public DataTable quizes { get; set; }
+
+    public void OnGet(int currentroomid)
     {
-        public DataTable quizes { get; set; }
-        public void OnGet(int currentroomid)
-        {
-            Room rooms = new Room();
-            string ConString = @"Data Source=ABDELRAHMAN-ELK;Initial Catalog=yarab1;Integrated Security=True";
+        var rooms = new Room();
+        var ConString = @"Data Source=ABDELRAHMAN-ELK;Initial Catalog=yarab1;Integrated Security=True";
 
 
-            quizes = rooms.GetQuizes(ConString, currentroomid);
-        }
-        public IActionResult OnPostJoinquiz(int RoomId, string Action)
+        quizes = rooms.GetQuizes(ConString, currentroomid);
+    }
+
+    public IActionResult OnPostJoinquiz(int RoomId, string Action)
+    {
+        if (Action.StartsWith("Joinquiz_"))
         {
-            if (Action.StartsWith("Joinquiz_"))
-            {
-                // Extract the Room ID from the Action value
-                string roomIdStr = Action.Substring("Joinquiz_".Length);
-                if (int.TryParse(roomIdStr, out int clickedquizId))
+            // Extract the Room ID from the Action value
+            var roomIdStr = Action.Substring("Joinquiz_".Length);
+            if (int.TryParse(roomIdStr, out var clickedquizId))
+                return RedirectToPage("Quiz", new
                 {
+                    currentquizid = clickedquizId
+                });
 
-                    return RedirectToPage("Quiz", new
-                    {
-                        currentquizid = clickedquizId
-                    });
-
-                }
-
-                // Handle other cases or errors
-                return Page();
-            }
-            else return Page();
-
+            // Handle other cases or errors
+            return Page();
         }
-        public IActionResult OnPostJoinstream()
-        {
-            return RedirectToPage("/posts");
-        }
+
+        return Page();
+    }
+
+    public IActionResult OnPostJoinstream()
+    {
+        return RedirectToPage("/posts");
     }
 }
-    

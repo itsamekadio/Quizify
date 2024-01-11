@@ -1,154 +1,162 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace Quizzify.Pages.classes
+namespace Quizzify.Pages.classes;
+
+public class Room
 {
-    public class Room
+    private DataTable RoomData;
+    public int RoomID { get; set; }
+
+    public DataTable GetRooms(string constring)
     {
-        private DataTable RoomData;
-        public int RoomID { get; set; }
-        public DataTable GetRooms(string constring)
+        var dt = new DataTable();
+
+        var con = new SqlConnection(constring);
+        try
         {
-            DataTable dt = new DataTable();
+            con.Open();
+            var querystring = "\tSELECT Name, Admin_ID, Description, Capacity,Room_ID FROM Rooms;";
+            var cmd = new SqlCommand(querystring, con);
 
-            SqlConnection con = new SqlConnection(constring);
-            try
-            {
-                con.Open();
-                string querystring = "\tSELECT Name, Admin_ID, Description, Capacity,Room_ID FROM Rooms;";
-                SqlCommand cmd = new SqlCommand(querystring, con);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt);
-                Console.WriteLine(querystring);
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return dt;
+            var adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            Console.WriteLine(querystring);
         }
-      
-       public int score(string constring, int quizid,string a1,string a2,string a3)
+        catch (SqlException ex)
         {
-            int scoree = 0;
-            SqlConnection con = new SqlConnection(constring);
-            try
-            {
-                con.Open();
-                string querystring = "Select  count(*) from Questionzz where Answer='" + a1+ "' and Quiz_ID="+quizid;
-                SqlCommand cmd = new SqlCommand(querystring, con);
-                int checker = (int)cmd.ExecuteScalar();
-                if (checker > 0) scoree++;
-                string querystring2 = "Select  count(*) from Questionzz where Answer='" + a2 + "' and Quiz_ID=" + quizid;
-                SqlCommand cmd2= new SqlCommand(querystring, con);
-                checker = (int)cmd2.ExecuteScalar();
-                if (checker > 0) scoree++;
-                string querystrin3 = "Select  count(*) from Questionzz where Answer='" + a3 + "' and Quiz_ID=" + quizid;
-                SqlCommand cmd3 = new SqlCommand(querystring, con);
-                checker = (int)cmd3.ExecuteScalar();
-                if (checker > 0) scoree++;
-
-                Console.WriteLine(querystring);
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return scoree;
+            Console.WriteLine(ex.ToString());
         }
-        public DataTable GetPosts(string TableName)
+        finally
         {
-            DataTable dt = new DataTable();
-            string querystring = "select * from " + TableName;
-            return dt;
+            con.Close();
         }
-        public DataTable GetRequests(string TableName)
-        {
-            DataTable dt = new DataTable();
-            string querystring = "select * from " + TableName;
-            return dt;
-        }
-        public DataTable GetComments(string TableName)
-        {
-            DataTable dt = new DataTable();
-            string querystring = "select * from " + TableName;
-            return dt;
-        }
-      
-        public DataTable GetQuizes(string constring,int roomid)
-        {
-            DataTable dt = new DataTable();
 
-            SqlConnection con = new SqlConnection(constring);
-            try
-            {
-                con.Open();
-                string querystring = "SELECT Quiz_ID, Title, Quiz_Descreption FROM Quizze WHERE Room_ID = "+ roomid;
-                SqlCommand cmd = new SqlCommand(querystring, con);
+        return dt;
+    }
 
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt);
-                Console.WriteLine(querystring);
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return dt;
-        }
-        public DataTable Getquestions(string constring, int quizid)
+    public int score(string constring, int quizid, string a1, string a2, string a3)
+    {
+        var scoree = 0;
+        var con = new SqlConnection(constring);
+        try
         {
-            DataTable dt = new DataTable();
+            con.Open();
+            var querystring = "Select  count(*) from Questionzz where Answer='" + a1 + "' and Quiz_ID=" + quizid;
+            var cmd = new SqlCommand(querystring, con);
+            var checker = (int)cmd.ExecuteScalar();
+            if (checker > 0) scoree++;
+            var querystring2 = "Select  count(*) from Questionzz where Answer='" + a2 + "' and Quiz_ID=" + quizid;
+            var cmd2 = new SqlCommand(querystring, con);
+            checker = (int)cmd2.ExecuteScalar();
+            if (checker > 0) scoree++;
+            var querystrin3 = "Select  count(*) from Questionzz where Answer='" + a3 + "' and Quiz_ID=" + quizid;
+            var cmd3 = new SqlCommand(querystring, con);
+            checker = (int)cmd3.ExecuteScalar();
+            if (checker > 0) scoree++;
 
-            SqlConnection con = new SqlConnection(constring);
-            try
-            {
-                con.Open();
-                string querystring = "  select Quiz_ID,Question_ID,Question_Content,Option_A,Option_B,Option_C,Option_D,Answer from Questionzz where Quiz_ID= " + quizid;
-                SqlCommand cmd = new SqlCommand(querystring, con);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dt);
-                Console.WriteLine(querystring);
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return dt;
+            Console.WriteLine(querystring);
         }
-        public DataTable GetPlayers(string TableName)
+        catch (SqlException ex)
         {
-                DataTable dt = new DataTable();
-                string querystring = "select * from " + TableName;
-                return dt;
+            Console.WriteLine(ex.ToString());
         }
-        public DataTable GetLeaderBoard(string TableName)
+        finally
         {
-            DataTable dt = new DataTable();
-            string querystring = "select * from " + TableName;
-            return dt;
+            con.Close();
         }
+
+        return scoree;
+    }
+
+    public DataTable GetPosts(string TableName)
+    {
+        var dt = new DataTable();
+        var querystring = "select * from " + TableName;
+        return dt;
+    }
+
+    public DataTable GetRequests(string TableName)
+    {
+        var dt = new DataTable();
+        var querystring = "select * from " + TableName;
+        return dt;
+    }
+
+    public DataTable GetComments(string TableName)
+    {
+        var dt = new DataTable();
+        var querystring = "select * from " + TableName;
+        return dt;
+    }
+
+    public DataTable GetQuizes(string constring, int roomid)
+    {
+        var dt = new DataTable();
+
+        var con = new SqlConnection(constring);
+        try
+        {
+            con.Open();
+            var querystring = "SELECT Quiz_ID, Title, Quiz_Descreption FROM Quizze WHERE Room_ID = " + roomid;
+            var cmd = new SqlCommand(querystring, con);
+
+            var adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            Console.WriteLine(querystring);
+        }
+        catch (SqlException ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
+        finally
+        {
+            con.Close();
+        }
+
+        return dt;
+    }
+
+    public DataTable Getquestions(string constring, int quizid)
+    {
+        var dt = new DataTable();
+
+        var con = new SqlConnection(constring);
+        try
+        {
+            con.Open();
+            var querystring =
+                "  select Quiz_ID,Question_ID,Question_Content,Option_A,Option_B,Option_C,Option_D,Answer from Questionzz where Quiz_ID= " +
+                quizid;
+            var cmd = new SqlCommand(querystring, con);
+
+            var adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            Console.WriteLine(querystring);
+        }
+        catch (SqlException ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
+        finally
+        {
+            con.Close();
+        }
+
+        return dt;
+    }
+
+    public DataTable GetPlayers(string TableName)
+    {
+        var dt = new DataTable();
+        var querystring = "select * from " + TableName;
+        return dt;
+    }
+
+    public DataTable GetLeaderBoard(string TableName)
+    {
+        var dt = new DataTable();
+        var querystring = "select * from " + TableName;
+        return dt;
     }
 }

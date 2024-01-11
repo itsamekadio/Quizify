@@ -1,58 +1,60 @@
 ﻿@page
-@model Quizzify.Pages.QuizModel
 @using System.Data
+@model QuizModel
 
-<br />
+<br/>
 
 <body>
 
-    @if (Model.questionstable != null && Model.questionstable.Rows.Count > 0)
-    {
-        <div class="friendship-table">
-            <h3>quizzz3s mon ami</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        
-                        <th>Answer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (DataRow row in Model.questionstable.Rows)
-                    {
-                        <tr>
-                            <td>
-                                @row["Question_ID"]- @row["Question_Content"]
-                                <br>
-                                A) @row["Option_A"]
-                                <br>
-                                B) @row["Option_B"]
-                                <br>
-                                C) @row["Option_C"]
-                                <br>
-                                D) @row["Option_D"]
-                            </td>
-                            <td>
-                                <form asp-page-handler="Joinquiz" method="post">
-                                    <input type="hidden" name="RoomId" value="@row["Quiz_ID"]" />
-                                    <label><b>Your Answer (A, B, C, D)</b></label>
-                                    <br>
-                                    <input type="text" asp-for="answer" />
-                                    <br />
-                                    <button type="button" onclick="checkans('@row["Answer"]')">Answer</button>
-                                </form>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    }
-    else
-    {
-        <p>No rooms data available.</p>
-    }
+@if (Model.questionstable != null && Model.questionstable.Rows.Count > 0)
+{
+    <div class="friendship-table">
+        <h3>quizzz3s mon ami</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+
+                <th>Answer</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (DataRow row in Model.questionstable.Rows)
+            {
+                <tr>
+                    <td>
+                        @row["Question_ID"]- @row["Question_Content"]
+                        <br>
+                        A) @row["Option_A"]
+                        <br>
+                        B) @row["Option_B"]
+                        <br>
+                        C) @row["Option_C"]
+                        <br>
+                        D) @row["Option_D"]
+                    </td>
+                    <td>
+                        <form asp-page-handler="Joinquiz" method="post">
+                            <input type="hidden" name="RoomId" value="@row["Quiz_ID"]"/>
+                            <label>
+                                <b>Your Answer (A, B, C, D)</b>
+                            </label>
+                            <br>
+                            <input type="text" asp-for="answer"/>
+                            <br/>
+                            <button type="button" onclick="checkans('@row["Answer"]')">Answer</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>No rooms data available.</p>
+}
 
 </body>
 

@@ -1,6 +1,6 @@
 ﻿@page
-@model Quizzify.Pages.RoomModel
 @using System.Data
+@model RoomModel
 
 <!DOCTYPE html>
 <html>
@@ -15,34 +15,31 @@
         <h3>Quizzes</h3>
         <table>
             <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Action</th>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Action</th>
 
-                </tr>
+            </tr>
             </thead>
             <tbody>
-                @foreach (DataRow row in Model.quizes.Rows)
-                {
-                    <tr>
-                        
-                        <td>@row["Title"]</td>
-                        <td>@row["Quiz_Descreption"]</td>
-                      
-                        <td>
-                            <form asp-page-handler="Joinquiz" method="post">
-                                <input type="hidden" name="RoomId" value="@row["Quiz_ID"]" />
-                                <button type="submit" name="Action" value="Joinquiz_@row["Quiz_ID"]">Join</button>
-                            </form>
+            @foreach (DataRow row in Model.quizes.Rows)
+            {
+                <tr>
+
+                    <td>@row["Title"]</td>
+                    <td>@row["Quiz_Descreption"]</td>
+
+                    <td>
+                        <form asp-page-handler="Joinquiz" method="post">
+                            <input type="hidden" name="RoomId" value="@row["Quiz_ID"]"/>
+                            <button type="submit" name="Action" value="Joinquiz_@row["Quiz_ID"]">Join</button>
+                        </form>
 
 
-
-
-
-                        </td>
-                    </tr>
-                }
+                    </td>
+                </tr>
+            }
             </tbody>
         </table>
     </div>
@@ -53,8 +50,8 @@ else
 }
 
 <form asp-page-handler="Joinstream" method="post">
-    
-    <button type="submit" >Stream</button>
+
+    <button type="submit">Stream</button>
 </form>
 
 </html>

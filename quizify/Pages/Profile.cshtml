@@ -1,68 +1,58 @@
 ﻿@page
-@model ProfileModel
 @using System.Data
+@model ProfileModel
 
 
-    
+<br/>
+<body>
 
-  
-        <br />
-    <body>
+<div class="profile">
+    <div class="profile-header">
+        <h2>Player Profile</h2>
+    </div>
 
-        <div class="profile">
-            <div class="profile-header">
-                <h2>Player Profile</h2>
-            </div>
+    <div class="profile-info">
+        <p>First Name: @Model.TempData["FName"]</p>
+        <p>Last Name: @Model.TempData["LName"]</p>
+        <p>Email: @Model.TempData["PlayerEmail"]</p>
+    </div>
+</div>
+@if (Model.FriendshipTable != null && Model.FriendshipTable.Rows.Count > 0)
+{
+    <div class="friendship-table">
+        <h3>Friendship Table</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th></th>
+                <!-- Add more columns as needed -->
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (DataRow row in Model.FriendshipTable.Rows)
+            {
+                <tr>
+                    <td>@row["Friend_First_Name"]</td>
+                    <td>@row["Friend_Last_Name"]</td>
+                    <td>@row["Friend_Email"]</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>No friendship data available.</p>
+}
+<div style="display: flex; justify-content: center; align-items: center;">
+    <form method="post">
+        <button type="submit" style="margin-right: 10px;">Sign out</button>
 
-            <div class="profile-info">
-                <p>First Name: @Model.TempData["FName"]</p>
-                <p>Last Name:  @Model.TempData["LName"]</p>
-                <p>Email:  @Model.TempData["PlayerEmail"]</p>
-            </div>
-        </div>
-    @if (Model.FriendshipTable != null && Model.FriendshipTable.Rows.Count > 0)
-    {
-        <div class="friendship-table">
-            <h3>Friendship Table</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>FIRST NAME</th>
-                        <th>LAST NAME</th>
-                        <th></th>
-                        <!-- Add more columns as needed -->
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (DataRow row in Model.FriendshipTable.Rows)
-                    {
-                        <tr>
-                            <td>@row["Friend_First_Name"]</td>
-                            <td>@row["Friend_Last_Name"]</td>
-                            <td>@row["Friend_Email"]</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    }
-    else
-    {
-        <p>No friendship data available.</p>
-    }
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <form method="post">
-                <button type="submit" style="margin-right: 10px;">Sign out</button>
-            
-        </form> 
-        </div>
-         
-
-    </body>
-
-     
-
-    
+    </form>
+</div>
 
 
-
+</body>

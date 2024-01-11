@@ -1,12 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Quizzify.Pages
+namespace Quizzify.Pages;
+
+public class AuthorFeedbackModel : PageModel
 {
-    public class AuthorFeedbackModel : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
-        }
     }
 }

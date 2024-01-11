@@ -1,59 +1,53 @@
 ﻿@page
-@model Quizzify.Pages.RoomsModel
 @using System.Data
+@model RoomsModel
 
 @{
 }
 <body>
 
-   
 
-    @if (Model.roomstable != null && Model.roomstable.Rows.Count > 0)
-    {
-        <div class="friendship-table">
-            <h3>Rooms</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Admin_id</th>
-                        <th>Description</th>
-                        <th>Capacity</th>
-                        <th>Action</th>
-                  
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (DataRow row in Model.roomstable.Rows)
-                    {
-                        <tr>
-                            <td>@row["Name"]</td>
-                            <td>@row["Admin_ID"]</td>
-                            <td>@row["Description"]</td>
-                            <td>@row["Capacity"]</td>
-                           
-                            <td>
-                                <form asp-page-handler="JoinRoom" method="post">
-                                    <input type="hidden" name="RoomId" value="@row["Room_ID"]" />
-                                    <button type="submit" name="Action" value="JoinRoom_@row["Room_ID"]">Join</button>
-                                </form>
+@if (Model.roomstable != null && Model.roomstable.Rows.Count > 0)
+{
+    <div class="friendship-table">
+        <h3>Rooms</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Admin_id</th>
+                <th>Description</th>
+                <th>Capacity</th>
+                <th>Action</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (DataRow row in Model.roomstable.Rows)
+            {
+                <tr>
+                    <td>@row["Name"]</td>
+                    <td>@row["Admin_ID"]</td>
+                    <td>@row["Description"]</td>
+                    <td>@row["Capacity"]</td>
+
+                    <td>
+                        <form asp-page-handler="JoinRoom" method="post">
+                            <input type="hidden" name="RoomId" value="@row["Room_ID"]"/>
+                            <button type="submit" name="Action" value="JoinRoom_@row["Room_ID"]">Join</button>
+                        </form>
 
 
-                              
-
-                             
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    }
-    else
-    {
-        <p>No rooms data available.</p>
-    }
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>No rooms data available.</p>
+}
 
 </body>
-
-

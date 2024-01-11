@@ -1,15 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Quizzify.Pages
+namespace Quizzify.Pages;
+
+public class ScoreHistoryModel : PageModel
 {
-    public class ScoreHistoryModel : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
-        }
-
-
-
     }
 }

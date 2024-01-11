@@ -1,28 +1,28 @@
 ﻿@page
-@model Quizzify.Pages.AuthorQuizModel
+@model AuthorQuizModel
 @{
 }
 <body>
-    <form method="post">
+<form method="post">
+    <div>
+
+
         <div>
-
-
-            <div>
-                <h4>Quiz title</h4> @* make it variable *@
-            </div>
-            <div>
-                <p>question</p> @* make it variable *@
-            </div>
-            <div>
-                <button asp-route-id="1">Previous </button>
-                <button asp-route-id="2"> Next </button>
-
-            </div>
-            <br>
-            <button asp-route-id="3"> Edit </button>
-            <button asp-route-id="4"> Done </button>
-
+            <h4>Quiz title</h4> @* make it variable *@
+        </div>
+        <div>
+            <p>question</p> @* make it variable *@
+        </div>
+        <div>
+            <button asp-route-id="1">Previous </button>
+            <button asp-route-id="2"> Next </button>
 
         </div>
-    </form>
+        <br>
+        <button asp-route-id="3"> Edit </button>
+        <button asp-route-id="4"> Done </button>
+
+
+    </div>
+</form>
 </body>

@@ -1,27 +1,27 @@
 ﻿@page
-@model Quizzify.Pages.AdminCommentsModel
+@model AdminCommentsModel
 @{
 }
 <body>
-    <form method="post">
+<form method="post">
 
+    <div>
         <div>
-            <div>
-                <h6>user name</h6> @* change it to variable *@
-                <button asp-route-id="1"> Edit </button>
-                <button asp-route-id="2"> Remove </button>
-            </div>
-            <div>
-                <p>comment content</p> @* change it to variable *@
-
-            </div>
+            <h6>user name</h6> @* change it to variable *@
+            <button asp-route-id="1"> Edit </button>
+            <button asp-route-id="2"> Remove </button>
         </div>
-
         <div>
-            <input type="text">
-            <br>
-            <button asp-route-id="2"> submit </button>
-        </div>
+            <p>comment content</p> @* change it to variable *@
 
-    </form>
+        </div>
+    </div>
+
+    <div>
+        <input type="text">
+        <br>
+        <button asp-route-id="2"> submit </button>
+    </div>
+
+</form>
 </body>

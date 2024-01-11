@@ -1,34 +1,39 @@
 ﻿@page
-@model Quizzify.Pages.SignInModel
+@model SignInModel
 @{
 }
 <body>
 
-   
 
-    <form method="post">
-        <div class ="text-center">
+<form method="post">
+    <div class="text-center">
 
-            <br><br>
-            <h2>SignIn</h2>
+        <br><br>
+        <h2>SignIn</h2>
 
-            <br><br>
-            <label><b>Email</b></label><br>
-            <input type="email" asp-for="@Model.email" /> <br />
+        <br><br>
+        <label>
+            <b>Email</b>
+        </label><br>
+        <input type="email" asp-for="@Model.email"/> <br/>
 
-            <label><b>Password</b></label><br>
-            <input type="text" asp-for="@Model.pass" /> <br />
+        <label>
+            <b>Password</b>
+        </label><br>
+        <input type="text" asp-for="@Model.pass"/> <br/>
 
-            <label>
-                <input type="checkbox"> Remember me
-            </label><br><br><br>
+        <label>
+            <input type="checkbox"> Remember me
+        </label><br><br><br>
 
-            <button type="submit">Sign in</button>
-            <button type="button">Cancel</button><br><br><br>
-            
+        <button type="submit">Sign in</button>
+        <button type="button">Cancel</button><br><br><br>
 
-            <span> <a href="https://localhost:7272/Index1">Create an account</a></span>
-        </div>
 
-    </form>
+        <span>
+            <a href="https://localhost:7272/Index1">Create an account</a>
+        </span>
+    </div>
+
+</form>
 </body>
