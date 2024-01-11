@@ -30,14 +30,47 @@ namespace Quizzify.Pages
         [BindProperty(SupportsGet = true)]
         [Required]
         public string authcode { set; get; }
-
+        SqlConnection con = new SqlConnection(ConString);
 
         static string ConString = @"Data Source=ABDELRAHMAN-ELK;Initial Catalog=yarab1;Integrated Security=True";
         Admin currentadmin = new Admin();
+        public bool test(string code)
+        {
+            con.Open();
+            string querystring = "Select  count(*) from Authenticationcodes where code='" + code + "'";
+            SqlCommand cmd1 = new SqlCommand(querystring, con);
+          
+          
+            int countcode = (int)cmd1.ExecuteScalar();
+            if (countcode > 0)
+            {
+                con.Close();
+                return true;
+            }
+
+            else
+            {
+                con.Close(); return false;
+            }
+
+        }
 
         /* string query2 = "INSERT INTO AdminData (Admin_ID, Authentication_code) VALUES(202201023,10000)";*/
         public void OnGet()
         {
+            Console.WriteLine("testing sign IN FOR ADMINS before trying it to avoid errors");
+            if (test( "bc"))
+            {
+                Console.WriteLine("passed");
+            }
+            else Console.WriteLine("failed");
+
+            if (test("adfaf"))
+            {
+                Console.WriteLine("passed");
+            }
+            else Console.WriteLine("failed");
+            
         }
         public IActionResult OnPost()
         {
